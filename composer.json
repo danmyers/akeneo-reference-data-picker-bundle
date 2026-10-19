@@ -1,0 +1,31 @@
+{
+    "name": "danmyers/akeneo-reference-data-picker-bundle",
+    "type": "symfony-bundle",
+    "description": "Modal picker for Akeneo PIM 7 reference data multi select attributes: search, tick several results across searches, and add them at once.",
+    "keywords": ["akeneo", "pim", "reference data", "multiselect", "symfony-bundle"],
+    "homepage": "https://github.com/danmyers/akeneo-reference-data-picker-bundle",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Daniel Myers"
+        }
+    ],
+    "require": {
+        "php": "^8.1",
+        "akeneo/pim-community-dev": "^7.0"
+    },
+    "suggest": {
+        "danmyers/akeneo-custom-entity-bundle": "Custom entities (reference data) managed from the PIM, with word-by-word search in the picker"
+    },
+    "autoload": {
+        "psr-4": {
+            "DanMyers\\ReferenceDataPickerBundle\\": "src/"
+        }
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-main": "1.0.x-dev"
+        }
+    },
+    "minimum-stability": "stable"
+}

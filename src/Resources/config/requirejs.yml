@@ -1,0 +1,5 @@
+config:
+    paths:
+        danmyers-reference-data-picker/field: danmyersreferencedatapicker/js/field
+        danmyers-reference-data-picker/picker: danmyersreferencedatapicker/js/picker
+        danmyers-reference-data-picker/template/picker: danmyersreferencedatapicker/templates/picker.html

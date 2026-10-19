@@ -1,0 +1,4 @@
+# Product edit field of every "reference data multi select" attribute: values
+# are added with a modal (search, tick several results, add them at once).
+attribute_fields:
+    akeneo-multi-select-reference-data-field: danmyers-reference-data-picker/field

@@ -1,0 +1,12 @@
+danmyers_reference_data_picker:
+    open: Add values
+    subtitle: Add values
+    search: Search by code or label
+    no_results: No results.
+    already_added: already added
+    load_more: Load more
+    selected: '{0}No item selected|{1}1 item selected|]1, Inf[{{ count }} items selected'
+    clear: Clear selection
+    select_all: 'Select all ({{ count }})'
+    add: '{0}Add|{1}Add 1 item|]1, Inf[Add {{ count }} items'
+    search_failed: The search failed. Please try again.

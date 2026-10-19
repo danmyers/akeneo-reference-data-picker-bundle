@@ -1,0 +1,75 @@
+<div class="danmyers-ReferencePicker">
+    <div class="danmyers-ReferencePicker-search">
+        <input
+            type="text"
+            class="AknTextField danmyers-ReferencePicker-searchInput"
+            placeholder="<%- __('danmyers_reference_data_picker.search') %>"
+            value="<%- term %>"
+            autocomplete="off"
+        />
+    </div>
+
+    <div class="danmyers-ReferencePicker-columns">
+        <div class="danmyers-ReferencePicker-results">
+            <div class="danmyers-ReferencePicker-header<%- 0 === selectableCount ? ' danmyers-ReferencePicker-header--disabled' : '' %>">
+                <label>
+                    <input
+                        type="checkbox"
+                        class="danmyers-ReferencePicker-selectAll"
+                        <%- 'all' === selectAllState ? 'checked' : '' %>
+                        <%- 0 === selectableCount ? 'disabled' : '' %>
+                    />
+                    <span><%- __('danmyers_reference_data_picker.select_all', {count: selectableCount}) %></span>
+                </label>
+            </div>
+            <% if (0 === results.length && !loading) { %>
+                <div class="danmyers-ReferencePicker-empty"><%- __('danmyers_reference_data_picker.no_results') %></div>
+            <% } %>
+            <ul class="danmyers-ReferencePicker-list">
+                <% _.each(results, function (item) { %>
+                    <% var existing = _.contains(existingCodes, item.id); %>
+                    <% var checked = existing || selectedCodes.indexOf(item.id) !== -1; %>
+                    <li class="danmyers-ReferencePicker-item<%- existing ? ' danmyers-ReferencePicker-item--existing' : '' %>">
+                        <label>
+                            <input
+                                type="checkbox"
+                                class="danmyers-ReferencePicker-checkbox"
+                                data-code="<%- item.id %>"
+                                data-label="<%- item.text %>"
+                                <%- checked ? 'checked' : '' %>
+                                <%- existing ? 'disabled' : '' %>
+                            />
+                            <span class="danmyers-ReferencePicker-label"><%- item.text %></span>
+                            <span class="danmyers-ReferencePicker-code"><%- item.id %></span>
+                            <% if (existing) { %>
+                                <span class="danmyers-ReferencePicker-hint"><%- __('danmyers_reference_data_picker.already_added') %></span>
+                            <% } %>
+                        </label>
+                    </li>
+                <% }); %>
+            </ul>
+            <% if (loading) { %>
+                <div class="danmyers-ReferencePicker-loading"><%- __('pim_common.loading') %></div>
+            <% } else if (more) { %>
+                <div class="AknButton AknButton--grey danmyers-ReferencePicker-more"><%- __('danmyers_reference_data_picker.load_more') %></div>
+            <% } %>
+        </div>
+
+        <div class="danmyers-ReferencePicker-selection">
+            <div class="danmyers-ReferencePicker-selectionTitle">
+                <%- __('danmyers_reference_data_picker.selected', {count: selected.length}, selected.length) %>
+                <% if (selected.length > 0) { %>
+                    <span class="danmyers-ReferencePicker-clear"><%- __('danmyers_reference_data_picker.clear') %></span>
+                <% } %>
+            </div>
+            <ul class="danmyers-ReferencePicker-selectionList">
+                <% _.each(selected, function (item) { %>
+                    <li class="danmyers-ReferencePicker-chip" title="<%- item.code %>">
+                        <span><%- item.label %></span>
+                        <span class="danmyers-ReferencePicker-unselect" data-code="<%- item.code %>" title="<%- __('pim_common.remove') %>">&times;</span>
+                    </li>
+                <% }); %>
+            </ul>
+        </div>
+    </div>
+</div>
