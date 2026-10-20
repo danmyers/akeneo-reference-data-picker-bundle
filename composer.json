@@ -4,7 +4,7 @@
     "description": "Modal picker for Akeneo PIM 7 reference data multi select attributes: search, tick several results across searches, and add them at once.",
     "keywords": ["akeneo", "pim", "reference data", "multiselect", "symfony-bundle"],
     "homepage": "https://github.com/danmyers/akeneo-reference-data-picker-bundle",
-    "license": "MIT",
+    "license": "GPL-3.0-or-later",
     "authors": [
         {
             "name": "Daniel Myers"

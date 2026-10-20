@@ -86,4 +86,4 @@ Picker.open({
 
 ## License
 
-[MIT](LICENSE) © Daniel Myers
+[GNU GPL v3.0 or later](LICENSE) © Daniel Myers
